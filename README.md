@@ -55,3 +55,8 @@ Ao final, deve ser possível **adicionar um novo tipo de desconto** e **trocar o
 ## Padrão de entrega
 
 Conforme a ficha de atividade prática: identificadores em português, código formatado, entrega no repositório Git com README e commits descritivos. O uso de IA para gerar o código é proibido nesta atividade (ver seção 5.3 da ficha).
+## Etapa 1: Análise da classe RelatorioAluno (SRP)
+A classe `RelatorioAluno.java` viola o Princípio da Responsabilidade Única (SRP) pois acumula três responsabilidades distintas, tendo múltiplos motivos para mudar:
+1. **Formatação:** Constrói a string de apresentação visual do relatório.
+2. **Persistência:** Contém a lógica para gravar o conteúdo em um arquivo de disco.
+3. **Comunicação:** Gerencia o envio do relatório por e-mail.
