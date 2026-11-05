@@ -60,3 +60,7 @@ A classe `RelatorioAluno.java` viola o Princípio da Responsabilidade Única (SR
 1. **Formatação:** Constrói a string de apresentação visual do relatório.
 2. **Persistência:** Contém a lógica para gravar o conteúdo em um arquivo de disco.
 3. **Comunicação:** Gerencia o envio do relatório por e-mail.
+## Etapa 5: Code Smells encontrados no código original
+1. **Divergent Change (Mudança Divergente) / God Class:** A classe `RelatorioAluno` sofria desse mal, pois acumulava formatação, disco e rede. Se a regra de formatação mudasse, ou a biblioteca de email mudasse, a classe precisaria ser alterada.
+2. **Switch Statements (Declarações Switch/If-Else Longas):** O método `calcularMensalidade` da classe `Matricula` apresentava esse cheiro com a cadeia de condicionais por tipo de desconto.
+3. **Coupling (Forte Acoplamento):** O uso da palavra-chave `new` dentro de `Matricula` para instanciar `GravadorMySQL` acoplava rigidamente a lógica de negócio à tecnologia de banco de dados concreta.
